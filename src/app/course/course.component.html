@@ -1,0 +1,38 @@
+<br>
+<br>
+<br>
+<div class="mainDiv" >
+    <form #getCompanyForm="ngForm" (ngSubmit)="getCoursesByTechnology()">
+        <div class="input-group" style="position: absolute; right: 10px;">
+            <input type="text" class="form-conntrol" placeholder="enter Technology" id="technology" required [(ngModel)]="technology" name="technology" #name="ngModel">
+            &nbsp;<button type="submit" mat-raised-button color="primary">Search</button>
+        </div>
+        
+        </form>
+        </div>
+<br>
+<br>
+
+<div class="table-responsive bg-white">
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th >Id</th>
+            <th >Name</th>
+            <th >Duration</th>
+            <th >Description</th>
+            <th >Technology</th>
+            <th >LaunchURL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let course of gridArr">
+                <td>{{course.courseId}}</td>
+                <td>{{course.name}}</td>
+                <td>{{course.duration}}</td>
+                <td>{{course.description}}</td>
+                <td>{{course.technology}}</td>
+                <td>{{course.launchURL}}</td>
+        </tr>
+    </tbody>
+    </table>
