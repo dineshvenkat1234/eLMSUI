@@ -11,8 +11,8 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   courses:Course[] |any;
-  private apiGetAll:string = 'http://localhost:8086/api/v1.0/lms/courses/getall';
-  private apiGetByTechnology = 'http://localhost:8086/api/v1.0/lms/courses/info';
+  private apiGetAll:string = 'https://rgcxiskqsd.execute-api.ap-northeast-1.amazonaws.com/elmsdemo/course';
+  private apiGetByTechnology:string = 'https://rgcxiskqsd.execute-api.ap-northeast-1.amazonaws.com/elmsdemo/course';
 
   getAllCourses():Observable<Array<Course>>{
     return this.http.get<Array<Course>>(this.apiGetAll);
